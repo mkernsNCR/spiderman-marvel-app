@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel API Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/md5-js@0.0.3/md5.min.js"></script>
+</head>
+<body>
+    <h1>Marvel API Test</h1>
+    <button id="testButton">Test Marvel API</button>
+    <pre id="result" style="margin-top: 20px; padding: 10px; background-color: #f5f5f5; border: 1px solid #ddd;"></pre>
+
+    <script>
+        document.getElementById('testButton').addEventListener('click', async () => {
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = 'Testing Marvel API...';
+            
+            try {
+                // Marvel API credentials
+                const PUBLIC_KEY = 'e632a7169a7a6780de47440d6e2c31cc';
+                const timestamp = new Date().getTime();
+                
+                // Make direct request to Marvel API (client-side)
+                const response = await axios.get('https://gateway.marvel.com/v1/public/characters', {
+                    params: {
+                        apikey: PUBLIC_KEY,
+                        ts: timestamp,
+                        nameStartsWith: 'Spider',
+                        limit: 1
+                    }
+                });
+                
+                resultElement.textContent = 'Success!\n\n' + JSON.stringify(response.data, null, 2);
+            } catch (error) {
+                resultElement.textContent = 'Error:\n\n' + 
+                    `Status: ${error.response?.status}\n` +
+                    `Status Text: ${error.response?.statusText}\n` +
+                    `Message: ${error.message}\n` +
+                    `Data: ${JSON.stringify(error.response?.data, null, 2)}`;
+            }
+        });
+    </script>
+</body>
+</html>

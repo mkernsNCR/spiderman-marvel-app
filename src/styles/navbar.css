@@ -1,0 +1,151 @@
+/* Navbar styles */
+.navbar {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  color: var(--text-light);
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin-left: 1.5rem;
+}
+
+.navbar-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  color: var(--primary-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.navbar-toggle-icon {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle-icon::before,
+.navbar-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle-icon::before {
+  transform: translateY(-9px);
+}
+
+.navbar-toggle-icon::after {
+  transform: translateY(9px);
+}
+
+.navbar-toggle-icon.open {
+  background-color: transparent;
+}
+
+.navbar-toggle-icon.open::before {
+  transform: rotate(45deg);
+}
+
+.navbar-toggle-icon.open::after {
+  transform: rotate(-45deg);
+}
+
+/* Dark mode styles */
+.dark-mode .navbar {
+  background-color: #1a1a1a;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+  
+  .navbar-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 99;
+  }
+  
+  .navbar-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .navbar-menu li {
+    margin: 0;
+    text-align: center;
+    padding: 0.75rem 0;
+  }
+  
+  .dark-mode .navbar-menu {
+    background-color: #1a1a1a;
+  }
+}

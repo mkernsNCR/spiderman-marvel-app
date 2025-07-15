@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g fill="#E23636">
+    <!-- Spider body -->
+    <ellipse cx="50" cy="50" rx="20" ry="25" />
+    
+    <!-- Spider legs -->
+    <!-- Top legs -->
+    <path d="M50,30 C60,10 80,5 95,15" stroke="#E23636" stroke-width="4" fill="none" />
+    <path d="M50,30 C40,10 20,5 5,15" stroke="#E23636" stroke-width="4" fill="none" />
+    
+    <!-- Middle top legs -->
+    <path d="M50,40 C65,25 85,25 95,35" stroke="#E23636" stroke-width="4" fill="none" />
+    <path d="M50,40 C35,25 15,25 5,35" stroke="#E23636" stroke-width="4" fill="none" />
+    
+    <!-- Middle bottom legs -->
+    <path d="M50,60 C65,75 85,75 95,65" stroke="#E23636" stroke-width="4" fill="none" />
+    <path d="M50,60 C35,75 15,75 5,65" stroke="#E23636" stroke-width="4" fill="none" />
+    
+    <!-- Bottom legs -->
+    <path d="M50,70 C60,90 80,95 95,85" stroke="#E23636" stroke-width="4" fill="none" />
+    <path d="M50,70 C40,90 20,95 5,85" stroke="#E23636" stroke-width="4" fill="none" />
+    
+    <!-- Spider eyes -->
+    <circle cx="43" cy="45" r="3" fill="white" />
+    <circle cx="57" cy="45" r="3" fill="white" />
+  </g>
+</svg>
