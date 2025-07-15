@@ -2,6 +2,8 @@
 
 A comprehensive full-stack application showcasing Spiderman facts, abilities, comics, and more using the Marvel Comics API. The application includes a mock API implementation for development and testing purposes.
 
+**Live Site:** [https://spiderman-marvel-app.vercel.app/](https://spiderman-marvel-app.vercel.app/)
+
 ![Spiderman Facts Website](https://i.imgur.com/placeholder-image.png)
 
 ## Features
